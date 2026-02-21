@@ -1,0 +1,30 @@
+{
+  "generator-jhipster": {
+    "applicationType": "gateway",
+    "authenticationType": "jwt",
+    "baseName": "gateway4",
+    "buildTool": "maven",
+    "cacheProvider": "ehcache",
+    "clientFramework": "no",
+    "clientPackageManager": "npm",
+    "creationTimestamp": 1771690374804,
+    "databaseType": "sql",
+    "enableHibernateCache": true,
+    "enableTranslation": false,
+    "entities": [],
+    "jhipsterVersion": "8.11.0",
+    "jwtSecretKey": "772b9247c6bdb26a8470b2975e9903cfa9e9a311af7a629eedf3720f1fd8dbd2",
+    "languages": ["en"],
+    "microfrontend": false,
+    "nativeLanguage": "en",
+    "packageName": "com.example.service",
+    "prodDatabaseType": "postgresql",
+    "reactive": true,
+    "serverPort": "8090",
+    "serviceDiscoveryType": "eureka",
+    "skipClient": true,
+    "skipServer": false,
+    "skipUserManagement": false,
+    "testFrameworks": ["cucumber"]
+  }
+}

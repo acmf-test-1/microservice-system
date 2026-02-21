@@ -1,0 +1,30 @@
+{
+  "generator-jhipster": {
+    "applicationType": "microservice",
+    "authenticationType": "jwt",
+    "baseName": "service3",
+    "buildTool": "maven",
+    "cacheProvider": "ehcache",
+    "clientFramework": "react",
+    "clientPackageManager": "npm",
+    "creationTimestamp": 1771690390119,
+    "databaseType": "sql",
+    "enableHibernateCache": true,
+    "enableTranslation": false,
+    "entities": [],
+    "jhipsterVersion": "8.11.0",
+    "jwtSecretKey": "f3d46c0508d65911dfd8ed43dfbfc7537ef21824180098a3b05f9dc14511bc87",
+    "languages": ["en"],
+    "microfrontend": false,
+    "nativeLanguage": "en",
+    "packageName": "com.example.service",
+    "prodDatabaseType": "postgresql",
+    "reactive": false,
+    "serverPort": "8091",
+    "serviceDiscoveryType": "eureka",
+    "skipClient": false,
+    "skipServer": false,
+    "skipUserManagement": true,
+    "testFrameworks": ["cucumber"]
+  }
+}
