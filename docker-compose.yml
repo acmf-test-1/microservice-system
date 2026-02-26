@@ -1,0 +1,56 @@
+version: '3.8'
+services:
+  testservice:
+    image: public.ecr.aws/c4d3l3m6/testservice:latest
+    container_name: testservice
+    restart: unless-stopped
+    ports:
+      - "8081:8081"
+    networks:
+      - app-network
+    environment:
+      - SPRING_PROFILES_ACTIVE=prod
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/testservice
+      - SPRING_LIQUIBASE_URL=jdbc:postgresql://postgres:5432/testservice
+      - SPRING_R2DBC_URL=r2dbc:postgresql://postgres:5432/testservice
+      - SERVER_SERVLET_SESSION_COOKIE_SECURE=false
+      - JHIPSTER_SECURITY_AUTHENTICATION_JWT_BASE64_SECRET=YzNmZGM5NzQyMzU4MGQ4NDM4NjgwOTc0ZWU3OTlmMjE5YjYwZGIwN2UyZTU1NjgwYThhZmI2N2UzZTAxZGU2Yzc2Y2VlODQ5N2IyNzhjNDY4ZGI2ZmMzNjI1YTA5OTk4ODg1ZTVlODdkNDU4NTI1MzM4MmZjYmE4ZTE3MGE2ZmQ=
+      - SPRING_DATASOURCE_USERNAME=testservice_user
+      - SPRING_DATASOURCE_PASSWORD=testservice_pass
+      - SPRING_LIQUIBASE_USERNAME=testservice_user
+      - SPRING_LIQUIBASE_PASSWORD=testservice_pass
+      - SPRING_R2DBC_USERNAME=testservice_user
+      - SPRING_R2DBC_PASSWORD=testservice_pass
+      - SPRING_CLOUD_CONFIG_ENABLED=false
+      - SPRING_CLOUD_CONFIG_FAIL_FAST=false
+      - SPRING_CONFIG_IMPORT=
+      - EUREKA_CLIENT_ENABLED=false
+  gateway1:
+    image: public.ecr.aws/c4d3l3m6/gateway1:latest
+    container_name: gateway1
+    restart: unless-stopped
+    ports:
+      - "8082:8082"
+    networks:
+      - app-network
+    environment:
+      - SPRING_PROFILES_ACTIVE=prod
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/gateway1
+      - SPRING_LIQUIBASE_URL=jdbc:postgresql://postgres:5432/gateway1
+      - SPRING_R2DBC_URL=r2dbc:postgresql://postgres:5432/gateway1
+      - SERVER_SERVLET_SESSION_COOKIE_SECURE=false
+      - JHIPSTER_SECURITY_AUTHENTICATION_JWT_BASE64_SECRET=YzNmZGM5NzQyMzU4MGQ4NDM4NjgwOTc0ZWU3OTlmMjE5YjYwZGIwN2UyZTU1NjgwYThhZmI2N2UzZTAxZGU2Yzc2Y2VlODQ5N2IyNzhjNDY4ZGI2ZmMzNjI1YTA5OTk4ODg1ZTVlODdkNDU4NTI1MzM4MmZjYmE4ZTE3MGE2ZmQ=
+      - SPRING_DATASOURCE_USERNAME=gateway1_user
+      - SPRING_DATASOURCE_PASSWORD=gateway1_pass
+      - SPRING_LIQUIBASE_USERNAME=gateway1_user
+      - SPRING_LIQUIBASE_PASSWORD=gateway1_pass
+      - SPRING_R2DBC_USERNAME=gateway1_user
+      - SPRING_R2DBC_PASSWORD=gateway1_pass
+      - SPRING_CLOUD_CONFIG_ENABLED=false
+      - SPRING_CLOUD_CONFIG_FAIL_FAST=false
+      - SPRING_CONFIG_IMPORT=
+      - EUREKA_CLIENT_ENABLED=false
+
+networks:
+  app-network:
+    external: true
